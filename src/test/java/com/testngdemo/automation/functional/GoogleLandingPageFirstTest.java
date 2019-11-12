@@ -38,7 +38,8 @@ public class GoogleLandingPageFirstTest extends TestSuitesBase {
         myLandingPage.enterQueryToSearchFor(QUERY_PATTERN_FIRST)
                 .doTheSearchAfterQueryEntered();
         log.info("checking that at least 1 result is displayed in search");
-        Assert.assertTrue(myLandingPage.getNumberOfFoundResults() > 0, "ooops, looks nothing have been found in search. Please contact test developers for investigation");
+        //Assert.assertTrue(myLandingPage.getNumberOfFoundResults() > 0, "ooops, looks nothing have been found in search. Please contact test developers for investigation");
+        Assert.assertEquals(myLandingPage.getNumberOfFoundResults() , 0, "ooops, looks nothing have been found in search. Please contact test developers for investigation");
     }
 
     @Title("negative test")
@@ -77,6 +78,27 @@ public class GoogleLandingPageFirstTest extends TestSuitesBase {
         myLandingPage.enterQueryToSearchFor(QUERY_PATTERN_SECOND)
                 .doTheSearchAfterQueryEntered();
         log.info("checking that at least 1 result is displayed in search");
-        Assert.assertTrue(myLandingPage.getNumberOfFoundResults() > 0, "ooops, looks nothing have been found in search. Please contact test developers for investigation");
+        //Assert.assertTrue(myLandingPage.getNumberOfFoundResults() > 0, "ooops, looks nothing have been found in search. Please contact test developers for investigation");
+        Assert.assertEquals(myLandingPage.getNumberOfFoundResults() , 0, "ooops, looks nothing have been found in search. Please contact test developers for investigation");
+    }
+    
+    @Title("negative test, second test")
+    @Features("second failing test TestNG demo")
+    @Stories("second negative test This is failing test for debugging and demo reporting purposes")
+    @Test(groups = {"REGRESSION.SUITE"})
+    @Parameters({"browser"})
+    public void negativeFailingRegTestSearchByQuery() throws Exception {
+        WebDriver driver;
+        driver = TLDriverFactory.getDriver();
+        log.info("test started! Current threadID: {}", Thread.currentThread().getId());
+        driver.get(baseUrl);
+
+        log.info("do search on google landing page by string query");
+        GoogleLandingPage myLandingPage = new GoogleLandingPage(driver);
+        myLandingPage.enterQueryToSearchFor(QUERY_PATTERN_SECOND)
+                .doTheSearchAfterQueryEntered();
+        log.info("checking that at least 1 result is displayed in search");
+        //Assert.assertTrue(myLandingPage.getNumberOfFoundResults() > 0, "ooops, looks nothing have been found in search. Please contact test developers for investigation");
+        Assert.assertEquals(myLandingPage.getNumberOfFoundResults() ,0, "ooops, looks nothing have been found in search. Please contact test developers for investigation");
     }
 }
