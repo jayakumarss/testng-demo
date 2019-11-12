@@ -19,8 +19,8 @@ import ru.yandex.qatools.allure.annotations.Title;
 public class GoogleLandingPageFirstTest extends TestSuitesBase {
 
 
-    private final String QUERY_PATTERN_FIRST = "experitest";
-    private final String QUERY_PATTERN_SECOND = "appium";
+    private final String QUERY_PATTERN_FIRST = "docker";
+    private final String QUERY_PATTERN_SECOND = "jenkins";
 
     @Title("Google search landing page, first test")
     @Features("TestNG demo")
