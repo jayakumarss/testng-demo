@@ -33,7 +33,7 @@
         <yandexallure.latest.version>2.2</yandexallure.latest.version>
         <aspectj.version>1.8.10</aspectj.version>
 
-        <testng.suite.name>property from commandline</testng.suite.name>
+        <testng.suite.name>ParallelTestsSuiteWithListeners</testng.suite.name>
     </properties>
 
     <dependencies>
