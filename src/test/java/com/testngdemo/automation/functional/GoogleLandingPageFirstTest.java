@@ -58,7 +58,8 @@ public class GoogleLandingPageFirstTest extends TestSuitesBase {
         myLandingPage.enterQueryToSearchFor(QUERY_PATTERN_FIRST)
                 .doTheSearchAfterQueryEntered();
         log.info("checking that at least 1 result is displayed in search");
-        Assert.assertEquals(myLandingPage.getNumberOfFoundResults(), 0, "ooops, looks nothing have been found in search. Please contact test developers for investigation");
+        Assert.assertTrue(myLandingPage.getNumberOfFoundResults() > 0, "ooops, looks nothing have been found in search. Please contact test developers for investigation");
+        //Assert.assertEquals(myLandingPage.getNumberOfFoundResults(), 0, "ooops, looks nothing have been found in search. Please contact test developers for investigation");
     }
 
 
